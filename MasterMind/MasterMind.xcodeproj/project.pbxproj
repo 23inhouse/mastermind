@@ -19,7 +19,14 @@
 		B541AF2123BE1FDB00C67CAD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF2023BE1FDB00C67CAD /* Coordinator.swift */; };
 		B541AF2523BE1FE200C67CAD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF2323BE1FE200C67CAD /* AppCoordinator.swift */; };
 		B541AF2623BE1FE200C67CAD /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF2423BE1FE200C67CAD /* AppViewController.swift */; };
-		B541AF2823BE20D000C67CAD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF2723BE20D000C67CAD /* MainViewController.swift */; };
+		B541AF2B23BE221400C67CAD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF2A23BE221400C67CAD /* GameViewController.swift */; };
+		B541AF2D23BE223900C67CAD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF2C23BE223900C67CAD /* GameView.swift */; };
+		B541AF2F23BE258300C67CAD /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF2E23BE258300C67CAD /* BoardView.swift */; };
+		B541AF3323BE268400C67CAD /* BoardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF3223BE268400C67CAD /* BoardRowView.swift */; };
+		B541AF3523BE273200C67CAD /* RowScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF3423BE273200C67CAD /* RowScoreView.swift */; };
+		B541AF3723BE27AB00C67CAD /* BoardTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF3623BE27AB00C67CAD /* BoardTileView.swift */; };
+		B541AF3923BE2A0D00C67CAD /* TileScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF3823BE2A0D00C67CAD /* TileScoreView.swift */; };
+		B541AF3B23BE2E0000C67CAD /* UIStackView+Builders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF3A23BE2E0000C67CAD /* UIStackView+Builders.swift */; };
 		FED3D1FF90C0E9FD4C260A72 /* Pods_MasterMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1755AEFA0394DCB9EA86F210 /* Pods_MasterMindTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +71,14 @@
 		B541AF2023BE1FDB00C67CAD /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B541AF2323BE1FE200C67CAD /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		B541AF2423BE1FE200C67CAD /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
-		B541AF2723BE20D000C67CAD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B541AF2A23BE221400C67CAD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		B541AF2C23BE223900C67CAD /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		B541AF2E23BE258300C67CAD /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		B541AF3223BE268400C67CAD /* BoardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRowView.swift; sourceTree = "<group>"; };
+		B541AF3423BE273200C67CAD /* RowScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowScoreView.swift; sourceTree = "<group>"; };
+		B541AF3623BE27AB00C67CAD /* BoardTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTileView.swift; sourceTree = "<group>"; };
+		B541AF3823BE2A0D00C67CAD /* TileScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileScoreView.swift; sourceTree = "<group>"; };
+		B541AF3A23BE2E0000C67CAD /* UIStackView+Builders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Builders.swift"; sourceTree = "<group>"; };
 		BBB926904CF264136B0A07F0 /* Pods-MasterMind-MasterMindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMind-MasterMindUITests.release.xcconfig"; path = "Target Support Files/Pods-MasterMind-MasterMindUITests/Pods-MasterMind-MasterMindUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C0BBD2DA575DDE7372F9D862 /* Pods-MasterMindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMindTests.debug.xcconfig"; path = "Target Support Files/Pods-MasterMindTests/Pods-MasterMindTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,7 +149,7 @@
 		B541AEE823BE1CBA00C67CAD /* MasterMind */ = {
 			isa = PBXGroup;
 			children = (
-				B541AF2723BE20D000C67CAD /* MainViewController.swift */,
+				B541AF2923BE21D100C67CAD /* GameScene */,
 				B541AF1A23BE1FD100C67CAD /* Extensions */,
 				B541AF1F23BE1FDB00C67CAD /* Protocols */,
 				B541AF2223BE1FE200C67CAD /* Routing */,
@@ -176,6 +190,7 @@
 		B541AF1A23BE1FD100C67CAD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B541AF3A23BE2E0000C67CAD /* UIStackView+Builders.swift */,
 				B541AF1B23BE1FD100C67CAD /* UIView+Constraints.swift */,
 				B541AF1C23BE1FD100C67CAD /* UIViewController+Subcontroller.swift */,
 			);
@@ -197,6 +212,20 @@
 				B541AF2423BE1FE200C67CAD /* AppViewController.swift */,
 			);
 			path = Routing;
+			sourceTree = "<group>";
+		};
+		B541AF2923BE21D100C67CAD /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				B541AF2E23BE258300C67CAD /* BoardView.swift */,
+				B541AF3223BE268400C67CAD /* BoardRowView.swift */,
+				B541AF3623BE27AB00C67CAD /* BoardTileView.swift */,
+				B541AF2A23BE221400C67CAD /* GameViewController.swift */,
+				B541AF2C23BE223900C67CAD /* GameView.swift */,
+				B541AF3423BE273200C67CAD /* RowScoreView.swift */,
+				B541AF3823BE2A0D00C67CAD /* TileScoreView.swift */,
+			);
+			path = GameScene;
 			sourceTree = "<group>";
 		};
 		EB4C84CE0FCC5667CDD35709 /* Frameworks */ = {
@@ -429,13 +458,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B541AF3B23BE2E0000C67CAD /* UIStackView+Builders.swift in Sources */,
+				B541AF3723BE27AB00C67CAD /* BoardTileView.swift in Sources */,
 				B541AF2523BE1FE200C67CAD /* AppCoordinator.swift in Sources */,
+				B541AF3323BE268400C67CAD /* BoardRowView.swift in Sources */,
 				B541AF1D23BE1FD100C67CAD /* UIView+Constraints.swift in Sources */,
 				B541AF1E23BE1FD100C67CAD /* UIViewController+Subcontroller.swift in Sources */,
+				B541AF3523BE273200C67CAD /* RowScoreView.swift in Sources */,
 				B541AF2123BE1FDB00C67CAD /* Coordinator.swift in Sources */,
+				B541AF2D23BE223900C67CAD /* GameView.swift in Sources */,
+				B541AF2B23BE221400C67CAD /* GameViewController.swift in Sources */,
 				B541AF2623BE1FE200C67CAD /* AppViewController.swift in Sources */,
+				B541AF2F23BE258300C67CAD /* BoardView.swift in Sources */,
 				B541AEEA23BE1CBA00C67CAD /* AppDelegate.swift in Sources */,
-				B541AF2823BE20D000C67CAD /* MainViewController.swift in Sources */,
+				B541AF3923BE2A0D00C67CAD /* TileScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

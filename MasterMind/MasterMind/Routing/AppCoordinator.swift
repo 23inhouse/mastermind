@@ -17,7 +17,7 @@ class AppCoordinator: Coordinator {
   }
 
   func start() {
-    let viewController = MainViewController()
+    let viewController = GameViewController()
     viewController.coordinator = self
     go(to: viewController)
   }
