@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F41F515605F076E918D3003 /* Pods_MasterMind_MasterMindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BE134606B45C4486887322 /* Pods_MasterMind_MasterMindUITests.framework */; };
+		22A24E31C139D81727270803 /* Pods_MasterMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CF8F9A4552ADCDCD8F2F0A /* Pods_MasterMind.framework */; };
 		B541AEEA23BE1CBA00C67CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */; };
 		B541AEEC23BE1CBA00C67CAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AEEB23BE1CBA00C67CAD /* ViewController.swift */; };
 		B541AEEF23BE1CBA00C67CAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B541AEED23BE1CBA00C67CAD /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		B541AEF423BE1CBC00C67CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B541AEF223BE1CBC00C67CAD /* LaunchScreen.storyboard */; };
 		B541AEFF23BE1CBC00C67CAD /* MasterMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AEFE23BE1CBC00C67CAD /* MasterMindTests.swift */; };
 		B541AF0A23BE1CBC00C67CAD /* MasterMindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF0923BE1CBC00C67CAD /* MasterMindUITests.swift */; };
+		FED3D1FF90C0E9FD4C260A72 /* Pods_MasterMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1755AEFA0394DCB9EA86F210 /* Pods_MasterMindTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A256E5C8C64794DDFA8E390 /* Pods-MasterMindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMindTests.release.xcconfig"; path = "Target Support Files/Pods-MasterMindTests/Pods-MasterMindTests.release.xcconfig"; sourceTree = "<group>"; };
+		1755AEFA0394DCB9EA86F210 /* Pods_MasterMindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterMindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21CF8F9A4552ADCDCD8F2F0A /* Pods_MasterMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F7CB12403A48F41DC1F7589 /* Pods-MasterMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMind.debug.xcconfig"; path = "Target Support Files/Pods-MasterMind/Pods-MasterMind.debug.xcconfig"; sourceTree = "<group>"; };
+		53BE134606B45C4486887322 /* Pods_MasterMind_MasterMindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterMind_MasterMindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D263005D0E4B5D1A4F2F516 /* Pods-MasterMind-MasterMindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMind-MasterMindUITests.debug.xcconfig"; path = "Target Support Files/Pods-MasterMind-MasterMindUITests/Pods-MasterMind-MasterMindUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7EB965D7CA386B4592D82A15 /* Pods-MasterMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMind.release.xcconfig"; path = "Target Support Files/Pods-MasterMind/Pods-MasterMind.release.xcconfig"; sourceTree = "<group>"; };
 		B541AEE623BE1CBA00C67CAD /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B541AEEB23BE1CBA00C67CAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +57,8 @@
 		B541AF0523BE1CBC00C67CAD /* MasterMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B541AF0923BE1CBC00C67CAD /* MasterMindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindUITests.swift; sourceTree = "<group>"; };
 		B541AF0B23BE1CBC00C67CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBB926904CF264136B0A07F0 /* Pods-MasterMind-MasterMindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMind-MasterMindUITests.release.xcconfig"; path = "Target Support Files/Pods-MasterMind-MasterMindUITests/Pods-MasterMind-MasterMindUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C0BBD2DA575DDE7372F9D862 /* Pods-MasterMindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMindTests.debug.xcconfig"; path = "Target Support Files/Pods-MasterMindTests/Pods-MasterMindTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A24E31C139D81727270803 /* Pods_MasterMind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED3D1FF90C0E9FD4C260A72 /* Pods_MasterMindTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F41F515605F076E918D3003 /* Pods_MasterMind_MasterMindUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69683EDCFBAE5697FA7D1600 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F7CB12403A48F41DC1F7589 /* Pods-MasterMind.debug.xcconfig */,
+				7EB965D7CA386B4592D82A15 /* Pods-MasterMind.release.xcconfig */,
+				6D263005D0E4B5D1A4F2F516 /* Pods-MasterMind-MasterMindUITests.debug.xcconfig */,
+				BBB926904CF264136B0A07F0 /* Pods-MasterMind-MasterMindUITests.release.xcconfig */,
+				C0BBD2DA575DDE7372F9D862 /* Pods-MasterMindTests.debug.xcconfig */,
+				0A256E5C8C64794DDFA8E390 /* Pods-MasterMindTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B541AEDD23BE1CBA00C67CAD = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +110,8 @@
 				B541AEFD23BE1CBC00C67CAD /* MasterMindTests */,
 				B541AF0823BE1CBC00C67CAD /* MasterMindUITests */,
 				B541AEE723BE1CBA00C67CAD /* Products */,
+				69683EDCFBAE5697FA7D1600 /* Pods */,
+				EB4C84CE0FCC5667CDD35709 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +164,16 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EB4C84CE0FCC5667CDD35709 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21CF8F9A4552ADCDCD8F2F0A /* Pods_MasterMind.framework */,
+				53BE134606B45C4486887322 /* Pods_MasterMind_MasterMindUITests.framework */,
+				1755AEFA0394DCB9EA86F210 /* Pods_MasterMindTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +181,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B541AF0E23BE1CBC00C67CAD /* Build configuration list for PBXNativeTarget "MasterMind" */;
 			buildPhases = (
+				9DD7FBFC3AFA95E2A41FFA25 /* [CP] Check Pods Manifest.lock */,
 				B541AEE223BE1CBA00C67CAD /* Sources */,
 				B541AEE323BE1CBA00C67CAD /* Frameworks */,
 				B541AEE423BE1CBA00C67CAD /* Resources */,
@@ -157,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B541AF1123BE1CBC00C67CAD /* Build configuration list for PBXNativeTarget "MasterMindTests" */;
 			buildPhases = (
+				BE0445393191EAD5F52068AB /* [CP] Check Pods Manifest.lock */,
 				B541AEF623BE1CBC00C67CAD /* Sources */,
 				B541AEF723BE1CBC00C67CAD /* Frameworks */,
 				B541AEF823BE1CBC00C67CAD /* Resources */,
@@ -175,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B541AF1423BE1CBC00C67CAD /* Build configuration list for PBXNativeTarget "MasterMindUITests" */;
 			buildPhases = (
+				EC5BC59737E0B9D16631F36A /* [CP] Check Pods Manifest.lock */,
 				B541AF0123BE1CBC00C67CAD /* Sources */,
 				B541AF0223BE1CBC00C67CAD /* Frameworks */,
 				B541AF0323BE1CBC00C67CAD /* Resources */,
@@ -258,6 +302,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9DD7FBFC3AFA95E2A41FFA25 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MasterMind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE0445393191EAD5F52068AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MasterMindTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC5BC59737E0B9D16631F36A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MasterMind-MasterMindUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B541AEE223BE1CBA00C67CAD /* Sources */ = {
@@ -438,6 +551,7 @@
 		};
 		B541AF0F23BE1CBC00C67CAD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F7CB12403A48F41DC1F7589 /* Pods-MasterMind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +570,7 @@
 		};
 		B541AF1023BE1CBC00C67CAD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB965D7CA386B4592D82A15 /* Pods-MasterMind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -474,6 +589,7 @@
 		};
 		B541AF1223BE1CBC00C67CAD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0BBD2DA575DDE7372F9D862 /* Pods-MasterMindTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -495,6 +611,7 @@
 		};
 		B541AF1323BE1CBC00C67CAD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A256E5C8C64794DDFA8E390 /* Pods-MasterMindTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +633,7 @@
 		};
 		B541AF1523BE1CBC00C67CAD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D263005D0E4B5D1A4F2F516 /* Pods-MasterMind-MasterMindUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +654,7 @@
 		};
 		B541AF1623BE1CBC00C67CAD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBB926904CF264136B0A07F0 /* Pods-MasterMind-MasterMindUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
