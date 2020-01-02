@@ -10,12 +10,16 @@
 		0F41F515605F076E918D3003 /* Pods_MasterMind_MasterMindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BE134606B45C4486887322 /* Pods_MasterMind_MasterMindUITests.framework */; };
 		22A24E31C139D81727270803 /* Pods_MasterMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CF8F9A4552ADCDCD8F2F0A /* Pods_MasterMind.framework */; };
 		B541AEEA23BE1CBA00C67CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */; };
-		B541AEEC23BE1CBA00C67CAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AEEB23BE1CBA00C67CAD /* ViewController.swift */; };
-		B541AEEF23BE1CBA00C67CAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B541AEED23BE1CBA00C67CAD /* Main.storyboard */; };
 		B541AEF123BE1CBC00C67CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B541AEF023BE1CBC00C67CAD /* Assets.xcassets */; };
 		B541AEF423BE1CBC00C67CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B541AEF223BE1CBC00C67CAD /* LaunchScreen.storyboard */; };
 		B541AEFF23BE1CBC00C67CAD /* MasterMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AEFE23BE1CBC00C67CAD /* MasterMindTests.swift */; };
 		B541AF0A23BE1CBC00C67CAD /* MasterMindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF0923BE1CBC00C67CAD /* MasterMindUITests.swift */; };
+		B541AF1D23BE1FD100C67CAD /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF1B23BE1FD100C67CAD /* UIView+Constraints.swift */; };
+		B541AF1E23BE1FD100C67CAD /* UIViewController+Subcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF1C23BE1FD100C67CAD /* UIViewController+Subcontroller.swift */; };
+		B541AF2123BE1FDB00C67CAD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF2023BE1FDB00C67CAD /* Coordinator.swift */; };
+		B541AF2523BE1FE200C67CAD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF2323BE1FE200C67CAD /* AppCoordinator.swift */; };
+		B541AF2623BE1FE200C67CAD /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF2423BE1FE200C67CAD /* AppViewController.swift */; };
+		B541AF2823BE20D000C67CAD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AF2723BE20D000C67CAD /* MainViewController.swift */; };
 		FED3D1FF90C0E9FD4C260A72 /* Pods_MasterMindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1755AEFA0394DCB9EA86F210 /* Pods_MasterMindTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +50,6 @@
 		7EB965D7CA386B4592D82A15 /* Pods-MasterMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMind.release.xcconfig"; path = "Target Support Files/Pods-MasterMind/Pods-MasterMind.release.xcconfig"; sourceTree = "<group>"; };
 		B541AEE623BE1CBA00C67CAD /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B541AEEB23BE1CBA00C67CAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B541AEEE23BE1CBA00C67CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B541AEF023BE1CBC00C67CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B541AEF323BE1CBC00C67CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B541AEF523BE1CBC00C67CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +59,12 @@
 		B541AF0523BE1CBC00C67CAD /* MasterMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B541AF0923BE1CBC00C67CAD /* MasterMindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindUITests.swift; sourceTree = "<group>"; };
 		B541AF0B23BE1CBC00C67CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B541AF1B23BE1FD100C67CAD /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		B541AF1C23BE1FD100C67CAD /* UIViewController+Subcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Subcontroller.swift"; sourceTree = "<group>"; };
+		B541AF2023BE1FDB00C67CAD /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B541AF2323BE1FE200C67CAD /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		B541AF2423BE1FE200C67CAD /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		B541AF2723BE20D000C67CAD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BBB926904CF264136B0A07F0 /* Pods-MasterMind-MasterMindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMind-MasterMindUITests.release.xcconfig"; path = "Target Support Files/Pods-MasterMind-MasterMindUITests/Pods-MasterMind-MasterMindUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C0BBD2DA575DDE7372F9D862 /* Pods-MasterMindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMindTests.debug.xcconfig"; path = "Target Support Files/Pods-MasterMindTests/Pods-MasterMindTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,9 +135,11 @@
 		B541AEE823BE1CBA00C67CAD /* MasterMind */ = {
 			isa = PBXGroup;
 			children = (
+				B541AF2723BE20D000C67CAD /* MainViewController.swift */,
+				B541AF1A23BE1FD100C67CAD /* Extensions */,
+				B541AF1F23BE1FDB00C67CAD /* Protocols */,
+				B541AF2223BE1FE200C67CAD /* Routing */,
 				B541AF1723BE1D9F00C67CAD /* Supporting Files */,
-				B541AEEB23BE1CBA00C67CAD /* ViewController.swift */,
-				B541AEED23BE1CBA00C67CAD /* Main.storyboard */,
 				B541AEF523BE1CBC00C67CAD /* Info.plist */,
 			);
 			path = MasterMind;
@@ -161,6 +171,32 @@
 				B541AEF223BE1CBC00C67CAD /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B541AF1A23BE1FD100C67CAD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B541AF1B23BE1FD100C67CAD /* UIView+Constraints.swift */,
+				B541AF1C23BE1FD100C67CAD /* UIViewController+Subcontroller.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B541AF1F23BE1FDB00C67CAD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B541AF2023BE1FDB00C67CAD /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B541AF2223BE1FE200C67CAD /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				B541AF2323BE1FE200C67CAD /* AppCoordinator.swift */,
+				B541AF2423BE1FE200C67CAD /* AppViewController.swift */,
+			);
+			path = Routing;
 			sourceTree = "<group>";
 		};
 		EB4C84CE0FCC5667CDD35709 /* Frameworks */ = {
@@ -283,7 +319,6 @@
 			files = (
 				B541AEF423BE1CBC00C67CAD /* LaunchScreen.storyboard in Resources */,
 				B541AEF123BE1CBC00C67CAD /* Assets.xcassets in Resources */,
-				B541AEEF23BE1CBA00C67CAD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,8 +429,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B541AEEC23BE1CBA00C67CAD /* ViewController.swift in Sources */,
+				B541AF2523BE1FE200C67CAD /* AppCoordinator.swift in Sources */,
+				B541AF1D23BE1FD100C67CAD /* UIView+Constraints.swift in Sources */,
+				B541AF1E23BE1FD100C67CAD /* UIViewController+Subcontroller.swift in Sources */,
+				B541AF2123BE1FDB00C67CAD /* Coordinator.swift in Sources */,
+				B541AF2623BE1FE200C67CAD /* AppViewController.swift in Sources */,
 				B541AEEA23BE1CBA00C67CAD /* AppDelegate.swift in Sources */,
+				B541AF2823BE20D000C67CAD /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,14 +471,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B541AEED23BE1CBA00C67CAD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B541AEEE23BE1CBA00C67CAD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B541AEF223BE1CBC00C67CAD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
