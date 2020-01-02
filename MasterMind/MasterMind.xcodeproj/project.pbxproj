@@ -97,11 +97,9 @@
 		B541AEE823BE1CBA00C67CAD /* MasterMind */ = {
 			isa = PBXGroup;
 			children = (
-				B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */,
+				B541AF1723BE1D9F00C67CAD /* Supporting Files */,
 				B541AEEB23BE1CBA00C67CAD /* ViewController.swift */,
 				B541AEED23BE1CBA00C67CAD /* Main.storyboard */,
-				B541AEF023BE1CBC00C67CAD /* Assets.xcassets */,
-				B541AEF223BE1CBC00C67CAD /* LaunchScreen.storyboard */,
 				B541AEF523BE1CBC00C67CAD /* Info.plist */,
 			);
 			path = MasterMind;
@@ -123,6 +121,16 @@
 				B541AF0B23BE1CBC00C67CAD /* Info.plist */,
 			);
 			path = MasterMindUITests;
+			sourceTree = "<group>";
+		};
+		B541AF1723BE1D9F00C67CAD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */,
+				B541AEF023BE1CBC00C67CAD /* Assets.xcassets */,
+				B541AEF223BE1CBC00C67CAD /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
