@@ -15,6 +15,21 @@ class GameViewController: UIViewController {
 
   var correctSequence = GameViewController.newSequence()
 
+  var averageScore: Double {
+    guard scores.count > 0 else { return 0 }
+    return Double(scores.reduce(0, +)) / Double(scores.count)
+  }
+  var bestScore: Int { return scores.sorted().first ?? 0 }
+  var scores = [Int]() {
+    didSet {
+      updateControlsView()
+    }
+  }
+  var score: Double {
+    guard averageScore > 0 else { return 0 }
+    return 5.0 / averageScore
+  }
+
   let rowCount: Int = 10
   lazy var boardRowVCs: [BoardRowViewController] = {
     var boardRowVCs = [BoardRowViewController]()
@@ -42,11 +57,24 @@ class GameViewController: UIViewController {
     activate(index: lastIndex)
   }
 
+  func updateScore() {
+    guard let solvedIndex = boardRowVCs.firstIndex(where: { $0.isSolved }) else { return }
+
+    let currentScore = boardRowVCs.count - solvedIndex
+    UserData.storeScores(score: currentScore)
+    scores = UserData.retrieveScores()
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    scores = UserData.retrieveScores()
+
+    updateControlsView()
+
     setupViews()
     setupConstraints()
+    setupButtonDelegates()
 
     if let lastVC = boardRowVCs.last {
       lastVC.isActive = true
@@ -62,6 +90,13 @@ private extension GameViewController {
     newActiveRow.isActive = true
   }
 
+  func setupButtonDelegates() {
+    gameView.controlsView.buttons.enumerated().forEach { i, button in
+      button.delegate = self
+      button.index = i
+    }
+  }
+
   func setupConstraints() {
     gameView.constrain(to: view.safeAreaLayoutGuide)
   }
@@ -75,6 +110,12 @@ private extension GameViewController {
       gameView.boardView.add(row: boardRowVC.boardRowView)
     }
   }
+
+  func updateControlsView() {
+    gameView.controlsView.avg = averageScore
+    gameView.controlsView.best = bestScore
+    gameView.controlsView.score = score
+  }
 }
 
 extension GameViewController {
@@ -82,6 +123,11 @@ extension GameViewController {
   static let firstRowGuess = ["❤️", "🧡", "💛", "💚"]
   static let secondRowGuess = ["💙", "💙", "💜", "💜"]
   static let options = ["❤️", "🧡", "💛", "💚", "💙", "💜"]
+
+  static func fullReset(_ gameVC: GameViewController) {
+    UserData.reset()
+    gameVC.scores = UserData.retrieveScores()
+  }
 
   static func newSequence() -> [String] {
     return [

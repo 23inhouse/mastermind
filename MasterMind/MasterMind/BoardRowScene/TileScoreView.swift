@@ -25,7 +25,7 @@ class TileScoreView: UIView {
     return label
   }()
 
-  private var borderColor: UIColor = #colorLiteral(red: 0.7395828382, green: 0.8683537049, blue: 0.8795605965, alpha: 1)
+  private let borderColor: UIColor = #colorLiteral(red: 0.7395828382, green: 0.8683537049, blue: 0.8795605965, alpha: 1)
   private let borderWidth: CGFloat = 0.5
 
   override init(frame: CGRect) {

@@ -24,7 +24,7 @@ class BoardRowViewController: UIViewController {
     for guess in guesses where guess == " " { return false }
     return true
   }
-  var isCorrect: Bool { return guesses == correctSequence }
+  var isSolved: Bool { return guesses == correctSequence }
   var score: [String] { return calculateScore() }
 
   func reset(to new: [String]) {

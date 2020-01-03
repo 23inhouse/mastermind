@@ -13,11 +13,6 @@ extension GameViewController: RowDelegate {
     guard let currentVC = sender else { return }
     let index = currentVC.index
 
-    guard index > 0 else {
-      reset()
-      return
-    }
-
     if index == (boardRowVCs.count - 2) && !currentVC.isActive && !currentVC.isComplete {
       autofill()
       return
@@ -26,6 +21,11 @@ extension GameViewController: RowDelegate {
     guard currentVC.isComplete else { return }
     currentVC.setScore()
     currentVC.isActive = false
+
+    if currentVC.isSolved || index == 0 {
+      updateScore()
+      return
+    }
 
     boardRowVCs[index - 1].isActive = true
   }

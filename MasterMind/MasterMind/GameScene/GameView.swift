@@ -10,12 +10,13 @@ import UIKit
 
 class GameView: UIView {
   private let layout: UIStackView = {
-    let layout = UIStackView.make(.filled, axis: .vertical)
+    let layout = UIStackView.make(.filled, axis: .horizontal)
     return layout
   }()
 
   private let boardLayout: UIStackView = {
-    let boardLayout = UIStackView.make(.filled, axis: .horizontal)
+    let boardLayout = UIStackView.make(.filled, axis: .vertical)
+    boardLayout.spacing = 5
     return boardLayout
   }()
 
@@ -24,8 +25,8 @@ class GameView: UIView {
   private let boardLayoutLeftSpacer = UIView()
   private let boardLayoutRightSpacer = UIView()
 
-  private let infoView = UIView()
   let boardView = BoardView()
+  let controlsView = ControlsView()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -55,12 +56,12 @@ private extension GameView {
 
   func setupViews() {
     addSubview(layout)
-    layout.addArrangedSubview(layoutTopSpacer)
-    layout.addArrangedSubview(infoView)
+    layout.addArrangedSubview(boardLayoutLeftSpacer)
     layout.addArrangedSubview(boardLayout)
-    layout.addArrangedSubview(layoutBottomSpacer)
-    boardLayout.addArrangedSubview(boardLayoutLeftSpacer)
+    layout.addArrangedSubview(boardLayoutRightSpacer)
+    boardLayout.addArrangedSubview(layoutTopSpacer)
     boardLayout.addArrangedSubview(boardView)
-    boardLayout.addArrangedSubview(boardLayoutRightSpacer)
+    boardLayout.addArrangedSubview(controlsView)
+    boardLayout.addArrangedSubview(layoutBottomSpacer)
   }
 }
