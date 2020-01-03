@@ -19,6 +19,19 @@ class BoardRowView: UIView {
 
   private let rowScoreView = RowScoreView()
 
+  private(set) var buttons = [TileButton]()
+  lazy private(set) var completeButton: RowScoreView = rowScoreView
+
+  var buttonLabels: [String] {
+    return buttons.map { return $0.label.text ?? " " }
+  }
+
+  func set(score scores: [String]) {
+    for i in 0 ..< tilesPerRow {
+      rowScoreView.scores[i].label.text = scores.count > i ? scores[i] : " "
+    }
+  }
+
   override init(frame: CGRect) {
     super.init(frame: frame)
 
@@ -43,6 +56,7 @@ private extension BoardRowView {
     for _ in 0 ..< tilesPerRow {
       let boardTileView = BoardTileView()
       layout.addArrangedSubview(boardTileView)
+      buttons.append(boardTileView.button)
     }
   }
 }

@@ -9,6 +9,9 @@
 import UIKit
 
 class RowScoreView: UIView {
+  weak var delegate: RowDelegate?
+  weak var delegateFrom: BoardRowViewController?
+
   private let scorePerColumn: Int = 2
   private let scorePerRow: Int = 2
 
@@ -17,6 +20,8 @@ class RowScoreView: UIView {
     layout.spacing = 2
     return layout
   }()
+
+  var scores = [TileScoreView]()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -46,7 +51,15 @@ private extension RowScoreView {
       for _ in 0 ..< scorePerRow {
         let tileScoreView = TileScoreView()
         rowsStackView.addArrangedSubview(tileScoreView)
+        scores.append(tileScoreView)
       }
     }
+
+    let touch = UITapGestureRecognizer(target: self, action: #selector(touchButton))
+    addGestureRecognizer(touch)
+  }
+
+  @objc func touchButton() {
+    delegate?.didCompleteRow(delegateFrom)
   }
 }

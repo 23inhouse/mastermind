@@ -19,12 +19,13 @@ class GameView: UIView {
     return boardLayout
   }()
 
-  private let layoutSpacer = UIView()
+  private let layoutTopSpacer = UIView()
+  private let layoutBottomSpacer = UIView()
   private let boardLayoutLeftSpacer = UIView()
   private let boardLayoutRightSpacer = UIView()
 
   private let infoView = UIView()
-  private let boardView = BoardView()
+  let boardView = BoardView()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -43,16 +44,21 @@ private extension GameView {
     layout.constrain(to: self)
     boardLayoutLeftSpacer.translatesAutoresizingMaskIntoConstraints = false
     boardLayoutRightSpacer.translatesAutoresizingMaskIntoConstraints = false
+    layoutTopSpacer.translatesAutoresizingMaskIntoConstraints = false
+    layoutBottomSpacer.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      boardLayoutLeftSpacer.widthAnchor.constraint(equalTo: boardLayoutRightSpacer.widthAnchor)
+      boardLayoutLeftSpacer.widthAnchor.constraint(equalTo: boardLayoutRightSpacer.widthAnchor),
+      layoutBottomSpacer.heightAnchor.constraint(equalToConstant: 5),
+      layoutBottomSpacer.heightAnchor.constraint(equalTo: layoutTopSpacer.heightAnchor),
       ])
   }
 
   func setupViews() {
     addSubview(layout)
-    layout.addArrangedSubview(layoutSpacer)
+    layout.addArrangedSubview(layoutTopSpacer)
     layout.addArrangedSubview(infoView)
     layout.addArrangedSubview(boardLayout)
+    layout.addArrangedSubview(layoutBottomSpacer)
     boardLayout.addArrangedSubview(boardLayoutLeftSpacer)
     boardLayout.addArrangedSubview(boardView)
     boardLayout.addArrangedSubview(boardLayoutRightSpacer)

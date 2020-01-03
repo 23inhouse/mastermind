@@ -9,13 +9,15 @@
 import UIKit
 
 class BoardView: UIView {
-  private let rows: Int = 10
-
   private let layout: UIStackView = {
     let layout = UIStackView.make(.equal, axis: .vertical)
     layout.spacing = 5
     return layout
   }()
+
+  func add(row boardRowView: BoardRowView) {
+    layout.addArrangedSubview(boardRowView)
+  }
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -36,10 +38,5 @@ private extension BoardView {
 
   func setupViews() {
     addSubview(layout)
-
-    for _ in 0 ..< rows {
-      let boardRowView = BoardRowView()
-      layout.addArrangedSubview(boardRowView)
-    }
   }
 }
