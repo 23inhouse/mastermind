@@ -9,25 +9,33 @@
 import UIKit
 
 class ControlsView: UIView {
+  var average: Double = 0 {
+    didSet {
+      buttons[2].setLabel(bestAvgText, numberOfLines: 3)
+    }
+  }
   var best: Int = 0 {
     didSet {
-      let rounded = ControlsView.round(number: avg)
-      buttons[1].setLabel("Best: \(best)\n\nAverage\n\(rounded)", numberOfLines: 4)
+      buttons[2].setLabel(bestAvgText, numberOfLines: 3)
     }
   }
-  var avg: Double = 0 {
+  private var bestAvgText: String { return String(format: "Best: %d\nAvg\n%0.3f", best, average) }
+
+  var playCount: Int = 0 {
     didSet {
-      let rounded = ControlsView.round(number: avg)
-      buttons[1].setLabel("Best: \(best)\n\nAverage\n\(rounded)", numberOfLines: 4)
-      score = 5.0 / avg
+      buttons[1].setLabel(playCountText, numberOfLines: 2)
     }
   }
-  var score: Double = 0 {
+  private var playCountText: String { return String(format: "Game\n#%d", playCount) }
+
+  var score: Int = 0 {
     didSet {
-      let rounded = ControlsView.round(number: score)
-      buttons[2].setLabel("Score\n\(rounded)", numberOfLines: 2)
+      buttons[3].setLabel(scoreText, numberOfLines: 2)
     }
   }
+  private var scoreText: String { return String(format: "Score\n%d", score) }
+
+  var lastResetDate: Date = Date()
 
   private let infoPerRow: Int = 5
 
@@ -64,18 +72,7 @@ private extension ControlsView {
       buttons.append(boardTileView.button)
     }
 
-    buttons[0].setLabel("🚽")
-    //    buttons[1].setLabel("Best: \(best)\nAvg: \(avg)", numberOfLines: 2)
-    //    buttons[2].setLabel("Score\n\(score)", numberOfLines: 2)
-    buttons[3].setLabel("🧻")
-    buttons[4].setLabel("💩")
-  }
-}
-
-extension ControlsView {
-  static let precision: Double = 1000
-
-  static func round(number: Double) -> Double {
-    return Double((precision * number).rounded() / precision)
+    buttons[0].setLabel("🌊")
+    buttons[4].setLabel("🌈")
   }
 }

@@ -10,23 +10,34 @@ import Foundation
 
 struct UserData {
   enum Key: String {
-    case scores
+    case average
+    case best
+    case playCount
+    case score
   }
 
   private static let defaults = UserDefaults.standard
 
   static func reset() {
-    defaults.set([], forKey: Key.scores.rawValue)
+    defaults.set(0, forKey: Key.average.rawValue)
+    defaults.set(10, forKey: Key.best.rawValue)
+    defaults.set(0, forKey: Key.playCount.rawValue)
+    defaults.set(0, forKey: Key.score.rawValue)
   }
 
-  static func retrieveScores() -> [Int] {
-    let searches = defaults.object(forKey: Key.scores.rawValue) as? [Int]
-    return searches ?? []
+  static func retrieve(_ key: Key) -> Double {
+    return defaults.double(forKey: key.rawValue)
   }
 
-  static func storeScores(score: Int) {
-    var scores = retrieveScores()
-    scores.append(score)
-    defaults.set(scores, forKey: Key.scores.rawValue)
+  static func retrieve(_ key: Key) -> Int {
+    return defaults.integer(forKey: key.rawValue)
+  }
+
+  static func store(_ key: Key, _ value: Int) {
+    defaults.set(value, forKey: key.rawValue)
+  }
+
+  static func store(_ key: Key, _ value: Double) {
+    defaults.set(value, forKey: key.rawValue)
   }
 }

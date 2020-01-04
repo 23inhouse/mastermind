@@ -24,6 +24,10 @@ class TileButton: UIView {
     return label
   }()
 
+  func getLabel() -> String {
+    return label.text ?? " "
+  }
+
   func setLabel(_ text: String, numberOfLines: Int = 1) {
     label.text = text
     label.numberOfLines = numberOfLines

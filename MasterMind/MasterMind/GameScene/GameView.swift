@@ -60,8 +60,8 @@ private extension GameView {
     layout.addArrangedSubview(boardLayout)
     layout.addArrangedSubview(boardLayoutRightSpacer)
     boardLayout.addArrangedSubview(layoutTopSpacer)
-    boardLayout.addArrangedSubview(boardView)
     boardLayout.addArrangedSubview(controlsView)
+    boardLayout.addArrangedSubview(boardView)
     boardLayout.addArrangedSubview(layoutBottomSpacer)
   }
 }
