@@ -22,7 +22,9 @@ extension GameViewController: ButtonDelegate {
     let index = sender.index
     if index == 0 {
       GameViewController.fullReset(self)
+      reset()
     } else if index == 4 {
+      guard isComplete else { return }
       reset()
     }
   }

@@ -13,20 +13,21 @@ extension GameViewController: RowDelegate {
     guard let currentVC = sender else { return }
     let index = currentVC.index
 
-    if index == (boardRowVCs.count - 2) && !currentVC.isActive && !currentVC.isComplete {
-      autofill()
-      return
-    }
     guard currentVC.isActive else { return }
     guard currentVC.isComplete else { return }
     currentVC.setScore()
-    currentVC.isActive = false
 
-    if currentVC.isSolved || index == 0 {
+    if currentVC.isSolved {
       updateScore()
       return
     }
 
-    boardRowVCs[index - 1].isActive = true
+    if index == 0 {
+      updateScore()
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { UserData.reset() }
+      return
+    }
+
+    activate(index: index - 1)
   }
 }

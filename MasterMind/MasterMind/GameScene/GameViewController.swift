@@ -28,6 +28,11 @@ class GameViewController: UIViewController {
     didSet { gameView.controlsView.score = score }
   }
 
+  var solvedIndex: Int? { return boardRowVCs.firstIndex(where: { $0.isSolved }) }
+  var isComplete: Bool {
+    return solvedIndex != nil
+  }
+
   let rowCount: Int = 10
   lazy var boardRowVCs: [BoardRowViewController] = {
     var boardRowVCs = [BoardRowViewController]()
@@ -43,17 +48,17 @@ class GameViewController: UIViewController {
     return boardRowVCs
   }()
 
-  func autofill() {
-    boardRowVCs[9].setScore(for: GameViewController.firstRowGuess)
-    boardRowVCs[8].setScore(for: GameViewController.secondRowGuess)
-    activate(index: 7)
+  func activate(index: Int) {
+    guard let newActiveRow = boardRowVCs[optional: index] else { return }
+
+    boardRowVCs.forEach { $0.isActive = false }
+    newActiveRow.isActive = true
   }
 
   func reset() {
     GameViewController.reset(self)
     boardRowVCs.forEach { $0.reset(to: correctSequence) }
-    let lastIndex = boardRowVCs.count - 1
-    activate(index: lastIndex)
+    autofill()
   }
 
   func updateControlsView() {
@@ -64,7 +69,7 @@ class GameViewController: UIViewController {
   }
 
   func updateScore() {
-    guard let solvedIndex = boardRowVCs.firstIndex(where: { $0.isSolved }) else { return }
+    guard let solvedIndex = solvedIndex else { return }
 
     let scoreAmount: [Int: Int] = [
       9: 160,
@@ -107,18 +112,16 @@ class GameViewController: UIViewController {
     setupConstraints()
     setupButtonDelegates()
 
-    if let lastVC = boardRowVCs.last {
-      lastVC.isActive = true
-    }
+    reset()
   }
 }
 
 private extension GameViewController {
-  func activate(index: Int) {
-    guard let newActiveRow = boardRowVCs[optional: index] else { return }
-
-    boardRowVCs.forEach { $0.isActive = false }
-    newActiveRow.isActive = true
+  func autofill() {
+    let rowCount = boardRowVCs.count
+    boardRowVCs[rowCount - 1].setScore(for: GameViewController.firstRowGuess)
+    boardRowVCs[rowCount - 2].setScore(for: GameViewController.secondRowGuess)
+    activate(index: rowCount - 3)
   }
 
   func setupButtonDelegates() {
