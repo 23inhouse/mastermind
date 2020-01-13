@@ -13,19 +13,10 @@ class GameViewController: UIViewController {
 
   private(set) var gameView = GameView()
 
-  var correctSequence = GameViewController.newSequence()
-
-  var average: Double = 0 {
-    didSet { gameView.controlsView.average = average }
-  }
-  var best: Int = 0 {
-    didSet { gameView.controlsView.best = best }
-  }
-  var playCount: Int = 0 {
-    didSet { gameView.controlsView.playCount = playCount }
-  }
-  var score: Int = 0 {
-    didSet { gameView.controlsView.score = score }
+  var game = GameLogic() {
+    didSet {
+      updateControlsView()
+    }
   }
 
   var solvedIndex: Int? { return boardRowVCs.firstIndex(where: { $0.isSolved }) }
@@ -33,16 +24,15 @@ class GameViewController: UIViewController {
     return solvedIndex != nil
   }
 
-  let rowCount: Int = 10
   lazy var boardRowVCs: [BoardRowViewController] = {
     var boardRowVCs = [BoardRowViewController]()
-    for i in 0 ..< rowCount {
+    for i in 0 ..< game.maxGuessCount {
       let boardRowVC = BoardRowViewController()
       boardRowVC.coordinator = coordinator
       boardRowVC.delegate = self
       boardRowVC.gameDelegate = self
+      boardRowVC.game = game
       boardRowVC.index = i
-      boardRowVC.correctSequence = correctSequence
       boardRowVCs.append(boardRowVC)
     }
     return boardRowVCs
@@ -56,55 +46,37 @@ class GameViewController: UIViewController {
   }
 
   func reset() {
-    GameViewController.reset(self)
-    boardRowVCs.forEach { $0.reset(to: correctSequence) }
-    autofill()
+    game.newSequence()
+    redraw()
   }
 
-  func updateControlsView() {
-    gameView.controlsView.average = average
-    gameView.controlsView.best = best
-    gameView.controlsView.playCount = playCount
-    gameView.controlsView.score = score
+  func redraw() {
+    boardRowVCs.forEach { $0.reset(to: game) }
+    autofill()
   }
 
   func updateScore() {
     guard let solvedIndex = solvedIndex else { return }
 
-    let scoreAmount: [Int: Int] = [
-      9: 160,
-      8: 80,
-      7: 40,
-      6: 20,
-      5: 10,
-      4: 5,
-      3: 1,
-      2: 1,
-      1: 1,
-      0: 0,
-    ]
+    let guessCount = boardRowVCs.count - solvedIndex
 
-    let currentRow = boardRowVCs.count - solvedIndex
-    best = currentRow < best ? currentRow : best
-    score += scoreAmount[solvedIndex] ?? 0
-    playCount += 1
-    average = ((average * Double(playCount - 1)) + Double(currentRow)) / Double(playCount)
+    game.incrementPlay(with: guessCount)
 
     updateControlsView()
 
-    UserData.store(.average, average)
-    UserData.store(.best, best)
-    UserData.store(.playCount, playCount)
-    UserData.store(.score, score)
+    UserData.store(.average, game.average)
+    UserData.store(.best, game.best)
+    UserData.store(.playCount, game.playCount)
+    UserData.store(.score, game.score)
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    average = UserData.retrieve(.average)
-    best = UserData.retrieve(.best)
-    playCount = UserData.retrieve(.playCount)
-    score = UserData.retrieve(.score)
+    game.average = UserData.retrieve(.average)
+    game.best = UserData.retrieve(.best)
+    game.playCount = UserData.retrieve(.playCount)
+    game.score = UserData.retrieve(.score)
 
     updateControlsView()
 
@@ -112,15 +84,15 @@ class GameViewController: UIViewController {
     setupConstraints()
     setupButtonDelegates()
 
-    reset()
+    redraw()
   }
 }
 
 private extension GameViewController {
   func autofill() {
     let rowCount = boardRowVCs.count
-    boardRowVCs[rowCount - 1].setScore(for: GameViewController.firstRowGuess)
-    boardRowVCs[rowCount - 2].setScore(for: GameViewController.secondRowGuess)
+    boardRowVCs[rowCount - 1].setScore(for: GameLogic.firstRowGuess)
+    boardRowVCs[rowCount - 2].setScore(for: GameLogic.secondRowGuess)
     activate(index: rowCount - 3)
   }
 
@@ -144,32 +116,21 @@ private extension GameViewController {
       gameView.boardView.add(row: boardRowVC.boardRowView)
     }
   }
+
+  func updateControlsView() {
+    gameView.controlsView.average = game.average
+    gameView.controlsView.best = game.best
+    gameView.controlsView.playCount = game.playCount
+    gameView.controlsView.score = game.score
+  }
 }
 
 extension GameViewController {
-  static let empty = [" ", " ", " ", " "]
-  static let firstRowGuess = [ "💚", "💚", "🧡", "🧡"]
-  static let secondRowGuess = ["❤️", "💛", "💙", "💜"]
-  static let options = ["❤️", "🧡", "💛", "💚", "💙", "💜"]
-
   static func fullReset(_ gameVC: GameViewController) {
     UserData.reset()
-    gameVC.average = UserData.retrieve(.average)
-    gameVC.best = UserData.retrieve(.best)
-    gameVC.playCount = UserData.retrieve(.playCount)
-    gameVC.score = UserData.retrieve(.score)
-  }
-
-  static func newSequence() -> [String] {
-    return [
-      options.randomElement() ?? "🧡",
-      options.randomElement() ?? "🧡",
-      options.randomElement() ?? "🧡",
-      options.randomElement() ?? "🧡",
-    ]
-  }
-
-  static func reset(_ gameVC: GameViewController) {
-    gameVC.correctSequence = newSequence()
+    gameVC.game.average = UserData.retrieve(.average)
+    gameVC.game.best = UserData.retrieve(.best)
+    gameVC.game.playCount = UserData.retrieve(.playCount)
+    gameVC.game.score = UserData.retrieve(.score)
   }
 }

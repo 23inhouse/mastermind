@@ -20,7 +20,7 @@ struct UserData {
 
   static func reset() {
     defaults.set(0, forKey: Key.average.rawValue)
-    defaults.set(10, forKey: Key.best.rawValue)
+    defaults.set(0, forKey: Key.best.rawValue)
     defaults.set(0, forKey: Key.playCount.rawValue)
     defaults.set(0, forKey: Key.score.rawValue)
   }

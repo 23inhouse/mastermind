@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0F41F515605F076E918D3003 /* Pods_MasterMind_MasterMindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BE134606B45C4486887322 /* Pods_MasterMind_MasterMindUITests.framework */; };
 		22A24E31C139D81727270803 /* Pods_MasterMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CF8F9A4552ADCDCD8F2F0A /* Pods_MasterMind.framework */; };
+		B511076D23CCBE0E00C3BF8E /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511076C23CCBE0E00C3BF8E /* GameLogic.swift */; };
+		B511077123CCBFFC00C3BF8E /* AverageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077023CCBFFC00C3BF8E /* AverageCalculator.swift */; };
+		B511077323CCCCD200C3BF8E /* GuessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077223CCCCD200C3BF8E /* GuessLogic.swift */; };
 		B541AEEA23BE1CBA00C67CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */; };
 		B541AEF123BE1CBC00C67CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B541AEF023BE1CBC00C67CAD /* Assets.xcassets */; };
 		B541AEF423BE1CBC00C67CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B541AEF223BE1CBC00C67CAD /* LaunchScreen.storyboard */; };
@@ -65,6 +68,9 @@
 		53BE134606B45C4486887322 /* Pods_MasterMind_MasterMindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterMind_MasterMindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D263005D0E4B5D1A4F2F516 /* Pods-MasterMind-MasterMindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMind-MasterMindUITests.debug.xcconfig"; path = "Target Support Files/Pods-MasterMind-MasterMindUITests/Pods-MasterMind-MasterMindUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EB965D7CA386B4592D82A15 /* Pods-MasterMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMind.release.xcconfig"; path = "Target Support Files/Pods-MasterMind/Pods-MasterMind.release.xcconfig"; sourceTree = "<group>"; };
+		B511076C23CCBE0E00C3BF8E /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		B511077023CCBFFC00C3BF8E /* AverageCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageCalculator.swift; sourceTree = "<group>"; };
+		B511077223CCCCD200C3BF8E /* GuessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessLogic.swift; sourceTree = "<group>"; };
 		B541AEE623BE1CBA00C67CAD /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B541AEF023BE1CBC00C67CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,10 +153,20 @@
 		B511076A23CCBDA500C3BF8E /* App */ = {
 			isa = PBXGroup;
 			children = (
+				B511076B23CCBDD300C3BF8E /* GameLogic */,
 				B541AF4223BE506500C67CAD /* BoardRowScene */,
 				B541AF2923BE21D100C67CAD /* GameScene */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		B511076B23CCBDD300C3BF8E /* GameLogic */ = {
+			isa = PBXGroup;
+			children = (
+				B511076C23CCBE0E00C3BF8E /* GameLogic.swift */,
+				B511077223CCCCD200C3BF8E /* GuessLogic.swift */,
+			);
+			path = GameLogic;
 			sourceTree = "<group>";
 		};
 		B541AEDD23BE1CBA00C67CAD = {
@@ -277,6 +293,7 @@
 		B541AF5823BF948000C67CAD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B511077023CCBFFC00C3BF8E /* AverageCalculator.swift */,
 				B541AF5923BF948000C67CAD /* UserData.swift */,
 			);
 			path = Utilities;
@@ -531,10 +548,13 @@
 				B541AF2B23BE221400C67CAD /* GameViewController.swift in Sources */,
 				B541AF2623BE1FE200C67CAD /* AppViewController.swift in Sources */,
 				B541AF5A23BF948000C67CAD /* UserData.swift in Sources */,
+				B511077123CCBFFC00C3BF8E /* AverageCalculator.swift in Sources */,
 				B541AF4123BE4B0E00C67CAD /* BoardRowViewController+ButtonDelegate.swift in Sources */,
+				B511077323CCCCD200C3BF8E /* GuessLogic.swift in Sources */,
 				B541AF5423BF87DC00C67CAD /* GameViewController+ButtonDelegate.swift.swift in Sources */,
 				B541AF2F23BE258300C67CAD /* BoardView.swift in Sources */,
 				B541AEEA23BE1CBA00C67CAD /* AppDelegate.swift in Sources */,
+				B511076D23CCBE0E00C3BF8E /* GameLogic.swift in Sources */,
 				B541AF3923BE2A0D00C67CAD /* TileScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

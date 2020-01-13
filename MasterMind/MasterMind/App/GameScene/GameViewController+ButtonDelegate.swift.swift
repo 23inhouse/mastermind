@@ -11,7 +11,7 @@ import Foundation
 extension GameViewController: ButtonDelegate {
   func didTouchButton(_ sender: TileButton) {
     let label = sender.getLabel()
-    if GameViewController.options.contains(label) {
+    if GameLogic.options.contains(label) {
       guard let currentRowVC = boardRowVCs.first(where: { $0.isActive }) else { return }
       guard let index = currentRowVC.boardRowView.buttonLabels.firstIndex(where: { $0 == " "}) else { return }
 
