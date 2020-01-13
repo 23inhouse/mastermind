@@ -144,6 +144,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B511076A23CCBDA500C3BF8E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B541AF4223BE506500C67CAD /* BoardRowScene */,
+				B541AF2923BE21D100C67CAD /* GameScene */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		B541AEDD23BE1CBA00C67CAD = {
 			isa = PBXGroup;
 			children = (
@@ -169,8 +178,7 @@
 		B541AEE823BE1CBA00C67CAD /* MasterMind */ = {
 			isa = PBXGroup;
 			children = (
-				B541AF4223BE506500C67CAD /* BoardRowScene */,
-				B541AF2923BE21D100C67CAD /* GameScene */,
+				B511076A23CCBDA500C3BF8E /* App */,
 				B541AF1A23BE1FD100C67CAD /* Extensions */,
 				B541AF1F23BE1FDB00C67CAD /* Protocols */,
 				B541AF2223BE1FE200C67CAD /* Routing */,
