@@ -12,6 +12,7 @@
 		B511076D23CCBE0E00C3BF8E /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511076C23CCBE0E00C3BF8E /* GameLogic.swift */; };
 		B511077123CCBFFC00C3BF8E /* AverageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077023CCBFFC00C3BF8E /* AverageCalculator.swift */; };
 		B511077323CCCCD200C3BF8E /* GuessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077223CCCCD200C3BF8E /* GuessLogic.swift */; };
+		B511077723CE0E0100C3BF8E /* UserData+Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077623CE0E0100C3BF8E /* UserData+Game.swift */; };
 		B541AEEA23BE1CBA00C67CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */; };
 		B541AEF123BE1CBC00C67CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B541AEF023BE1CBC00C67CAD /* Assets.xcassets */; };
 		B541AEF423BE1CBC00C67CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B541AEF223BE1CBC00C67CAD /* LaunchScreen.storyboard */; };
@@ -71,6 +72,7 @@
 		B511076C23CCBE0E00C3BF8E /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		B511077023CCBFFC00C3BF8E /* AverageCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageCalculator.swift; sourceTree = "<group>"; };
 		B511077223CCCCD200C3BF8E /* GuessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessLogic.swift; sourceTree = "<group>"; };
+		B511077623CE0E0100C3BF8E /* UserData+Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+Game.swift"; sourceTree = "<group>"; };
 		B541AEE623BE1CBA00C67CAD /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B541AEF023BE1CBC00C67CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				B511077023CCBFFC00C3BF8E /* AverageCalculator.swift */,
 				B541AF5923BF948000C67CAD /* UserData.swift */,
+				B511077623CE0E0100C3BF8E /* UserData+Game.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				B511077323CCCCD200C3BF8E /* GuessLogic.swift in Sources */,
 				B541AF5423BF87DC00C67CAD /* GameViewController+ButtonDelegate.swift.swift in Sources */,
 				B541AF2F23BE258300C67CAD /* BoardView.swift in Sources */,
+				B511077723CE0E0100C3BF8E /* UserData+Game.swift in Sources */,
 				B541AEEA23BE1CBA00C67CAD /* AppDelegate.swift in Sources */,
 				B511076D23CCBE0E00C3BF8E /* GameLogic.swift in Sources */,
 				B541AF3923BE2A0D00C67CAD /* TileScoreView.swift in Sources */,

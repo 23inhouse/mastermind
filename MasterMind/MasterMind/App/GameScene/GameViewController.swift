@@ -64,19 +64,13 @@ class GameViewController: UIViewController {
 
     updateControlsView()
 
-    UserData.store(.average, game.average)
-    UserData.store(.best, game.best)
-    UserData.store(.playCount, game.playCount)
-    UserData.store(.score, game.score)
+    UserData.store(game: game)
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    game.average = UserData.retrieve(.average)
-    game.best = UserData.retrieve(.best)
-    game.playCount = UserData.retrieve(.playCount)
-    game.score = UserData.retrieve(.score)
+    game = UserData.retrieve(game: game)
 
     updateControlsView()
 
@@ -128,9 +122,6 @@ private extension GameViewController {
 extension GameViewController {
   static func fullReset(_ gameVC: GameViewController) {
     UserData.reset()
-    gameVC.game.average = UserData.retrieve(.average)
-    gameVC.game.best = UserData.retrieve(.best)
-    gameVC.game.playCount = UserData.retrieve(.playCount)
-    gameVC.game.score = UserData.retrieve(.score)
+    gameVC.game = UserData.retrieve(game: gameVC.game)
   }
 }
