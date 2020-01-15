@@ -29,7 +29,7 @@ class GameViewController: UIViewController {
       let boardRowVC = BoardRowViewController()
       boardRowVC.coordinator = coordinator
       boardRowVC.delegate = self
-      boardRowVC.gameDelegate = self
+      boardRowVC.buttonDelegate = self
       boardRowVC.game = gameVM.game
       boardRowVC.index = i
       boardRowVCs.append(boardRowVC)

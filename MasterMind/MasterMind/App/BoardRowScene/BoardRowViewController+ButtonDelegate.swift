@@ -16,7 +16,7 @@ extension BoardRowViewController: ButtonDelegate {
       sender.setLabel(" ")
     } else {
       guard text != " " else { return }
-      gameDelegate?.didTouchButton(sender)
+      buttonDelegate?.didTouchButton(sender)
     }
   }
 }

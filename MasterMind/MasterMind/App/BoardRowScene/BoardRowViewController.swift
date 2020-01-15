@@ -11,7 +11,7 @@ import UIKit
 class BoardRowViewController: UIViewController {
   weak var coordinator: AppCoordinator?
   weak var delegate: RowDelegate?
-  weak var gameDelegate: ButtonDelegate?
+  weak var buttonDelegate: ButtonDelegate?
 
   var game: GameLogic?
 
