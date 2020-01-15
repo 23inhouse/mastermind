@@ -13,6 +13,8 @@
 		B511077123CCBFFC00C3BF8E /* AverageCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077023CCBFFC00C3BF8E /* AverageCalculator.swift */; };
 		B511077323CCCCD200C3BF8E /* GuessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077223CCCCD200C3BF8E /* GuessLogic.swift */; };
 		B511077723CE0E0100C3BF8E /* UserData+Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077623CE0E0100C3BF8E /* UserData+Game.swift */; };
+		B511077923CF3DD500C3BF8E /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077823CF3DD500C3BF8E /* Box.swift */; };
+		B511077B23CF400A00C3BF8E /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077A23CF400A00C3BF8E /* GameViewModel.swift */; };
 		B541AEEA23BE1CBA00C67CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */; };
 		B541AEF123BE1CBC00C67CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B541AEF023BE1CBC00C67CAD /* Assets.xcassets */; };
 		B541AEF423BE1CBC00C67CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B541AEF223BE1CBC00C67CAD /* LaunchScreen.storyboard */; };
@@ -73,6 +75,8 @@
 		B511077023CCBFFC00C3BF8E /* AverageCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageCalculator.swift; sourceTree = "<group>"; };
 		B511077223CCCCD200C3BF8E /* GuessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessLogic.swift; sourceTree = "<group>"; };
 		B511077623CE0E0100C3BF8E /* UserData+Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+Game.swift"; sourceTree = "<group>"; };
+		B511077823CF3DD500C3BF8E /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		B511077A23CF400A00C3BF8E /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		B541AEE623BE1CBA00C67CAD /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B541AEF023BE1CBC00C67CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 				B541AF2A23BE221400C67CAD /* GameViewController.swift */,
 				B541AF5323BF87DC00C67CAD /* GameViewController+ButtonDelegate.swift.swift */,
 				B541AF4923BE61E000C67CAD /* GameViewController+RowDelegate.swift */,
+				B511077A23CF400A00C3BF8E /* GameViewModel.swift */,
 				B541AF2C23BE223900C67CAD /* GameView.swift */,
 			);
 			path = GameScene;
@@ -296,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				B511077023CCBFFC00C3BF8E /* AverageCalculator.swift */,
+				B511077823CF3DD500C3BF8E /* Box.swift */,
 				B541AF5923BF948000C67CAD /* UserData.swift */,
 				B511077623CE0E0100C3BF8E /* UserData+Game.swift */,
 			);
@@ -543,12 +549,14 @@
 				B541AF4623BE5F5D00C67CAD /* RowDelegate.swift in Sources */,
 				B541AF1E23BE1FD100C67CAD /* UIViewController+Subcontroller.swift in Sources */,
 				B541AF3F23BE483100C67CAD /* ButtonDelegate.swift in Sources */,
+				B511077923CF3DD500C3BF8E /* Box.swift in Sources */,
 				B541AF3523BE273200C67CAD /* RowScoreView.swift in Sources */,
 				B541AF2123BE1FDB00C67CAD /* Coordinator.swift in Sources */,
 				B541AF4C23BF64E100C67CAD /* Collection+Optional.swift in Sources */,
 				B541AF2D23BE223900C67CAD /* GameView.swift in Sources */,
 				B541AF3D23BE446A00C67CAD /* TileButton.swift in Sources */,
 				B541AF2B23BE221400C67CAD /* GameViewController.swift in Sources */,
+				B511077B23CF400A00C3BF8E /* GameViewModel.swift in Sources */,
 				B541AF2623BE1FE200C67CAD /* AppViewController.swift in Sources */,
 				B541AF5A23BF948000C67CAD /* UserData.swift in Sources */,
 				B511077123CCBFFC00C3BF8E /* AverageCalculator.swift in Sources */,

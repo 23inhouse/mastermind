@@ -18,12 +18,10 @@ extension GameViewController: RowDelegate {
     currentVC.setScore()
 
     if currentVC.isSolved {
-      updateScore()
       return
     }
 
     if index == 0 {
-      updateScore()
       DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { UserData.reset() }
       return
     }
