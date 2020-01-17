@@ -32,7 +32,7 @@ class GameViewModel {
   }
 
   func newSequence() {
-    game.newSequence()
+    game.new()
   }
 
   func retrieveState() {

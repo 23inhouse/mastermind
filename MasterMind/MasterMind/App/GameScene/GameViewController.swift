@@ -14,14 +14,13 @@ class GameViewController: UIViewController {
   private(set) var gameView = GameView()
   private(set) var gameVM = GameViewModel()
 
+  var activeBoardRowVC: BoardRowViewController? { return boardRowVCs.first(where: { $0.isActive }) }
   var guessCount: Int? {
     guard let solvedIndex = solvedIndex else { return nil }
     return boardRowVCs.count - solvedIndex
   }
   var solvedIndex: Int? { return boardRowVCs.firstIndex(where: { $0.isSolved }) }
-  var isComplete: Bool {
-    return solvedIndex != nil
-  }
+  var isComplete: Bool { return solvedIndex != nil }
 
   lazy var boardRowVCs: [BoardRowViewController] = {
     var boardRowVCs = [BoardRowViewController]()
@@ -30,8 +29,8 @@ class GameViewController: UIViewController {
       boardRowVC.coordinator = coordinator
       boardRowVC.delegate = self
       boardRowVC.buttonDelegate = self
-      boardRowVC.game = gameVM.game
       boardRowVC.index = i
+      boardRowVC.set(sequence: gameVM.sequence)
       boardRowVCs.append(boardRowVC)
     }
     return boardRowVCs
@@ -44,13 +43,27 @@ class GameViewController: UIViewController {
     newActiveRow.isActive = true
   }
 
+  func perform(action value: String) {
+    guard ["🌊", "🌈"].contains(value) else { return }
+
+    if value == "🌊" {
+      GameViewController.fullReset(self)
+    }
+    if value == "🌈" && !isComplete { return }
+
+    reset()
+  }
+
   func reset() {
     gameVM.newSequence()
     redraw()
   }
 
   func redraw() {
-    boardRowVCs.forEach { $0.reset(to: gameVM.game) }
+    boardRowVCs.forEach { vc in
+      vc.set(sequence: gameVM.game.sequence)
+      vc.set(guesses: GuessLogic.empty)
+    }
     autofill()
   }
 
@@ -75,8 +88,8 @@ class GameViewController: UIViewController {
 private extension GameViewController {
   func autofill() {
     let rowCount = boardRowVCs.count
-    boardRowVCs[rowCount - 1].setScore(for: GameLogic.firstRowGuess)
-    boardRowVCs[rowCount - 2].setScore(for: GameLogic.secondRowGuess)
+    boardRowVCs[rowCount - 1].set(guesses: GameLogic.firstRowGuess)
+    boardRowVCs[rowCount - 2].set(guesses: GameLogic.secondRowGuess)
     activate(index: rowCount - 3)
   }
 

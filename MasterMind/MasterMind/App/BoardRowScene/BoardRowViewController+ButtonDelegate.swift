@@ -9,14 +9,13 @@
 import Foundation
 
 extension BoardRowViewController: ButtonDelegate {
-  func didTouchButton(_ sender: TileButton) {
-    guard let text = sender.label.text else { return }
+  func didTouchButton(_ value: String, at index: Int) {
 
     if isActive {
-      sender.setLabel(" ")
+      boardRowVM.set(value: " ", at: index)
     } else {
-      guard text != " " else { return }
-      buttonDelegate?.didTouchButton(sender)
+      guard value != " " else { return }
+      buttonDelegate?.didTouchButton(value, at: index)
     }
   }
 }

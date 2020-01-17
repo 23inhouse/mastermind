@@ -11,21 +11,13 @@ import Foundation
 extension GameViewController: RowDelegate {
   func didCompleteRow(_ sender: BoardRowViewController? = nil) {
     guard let currentVC = sender else { return }
-    let index = currentVC.index
-
     guard currentVC.isActive else { return }
+
+    currentVC.set(guesses: currentVC.guesses)
+    currentVC.complete(gameVM, guessCount: guessCount)
+
     guard currentVC.isComplete else { return }
-    currentVC.setScore()
-
-    if currentVC.isSolved {
-      return
-    }
-
-    if index == 0 {
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { UserData.reset() }
-      return
-    }
-
+    let index = currentVC.index
     activate(index: index - 1)
   }
 }

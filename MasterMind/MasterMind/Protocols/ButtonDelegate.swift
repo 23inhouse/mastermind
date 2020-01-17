@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ButtonDelegate: AnyObject {
-  func didTouchButton(_ sender: TileButton)
+  func didTouchButton(_ value: String, at index: Int)
 }

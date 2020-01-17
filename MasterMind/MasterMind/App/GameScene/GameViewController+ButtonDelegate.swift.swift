@@ -9,23 +9,12 @@
 import Foundation
 
 extension GameViewController: ButtonDelegate {
-  func didTouchButton(_ sender: TileButton) {
-    let label = sender.getLabel()
-    if GameLogic.options.contains(label) {
-      guard let currentRowVC = boardRowVCs.first(where: { $0.isActive }) else { return }
-      guard let index = currentRowVC.boardRowView.buttonLabels.firstIndex(where: { $0 == " "}) else { return }
-
-      currentRowVC.boardRowView.buttons[index].setLabel(label)
+  func didTouchButton(_ value: String, at index: Int) {
+    if GameLogic.options.contains(value) {
+      activeBoardRowVC?.boardRowVM.fillFirstEmpty(with: value)
       return
     }
 
-    let index = sender.index
-    if index == 0 {
-      GameViewController.fullReset(self)
-      reset()
-    } else if index == 4 {
-      guard isComplete else { return }
-      reset()
-    }
+    perform(action: value)
   }
 }

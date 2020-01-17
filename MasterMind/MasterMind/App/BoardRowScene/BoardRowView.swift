@@ -26,6 +26,11 @@ class BoardRowView: UIView {
     return buttons.map { return $0.label.text ?? " " }
   }
 
+  func set(guesses: [String]) {
+    for (i, guess) in guesses.enumerated() {
+      buttons[i].label.text = guess
+    }
+  }
   func set(score scores: [String]) {
     for i in 0 ..< tilesPerRow {
       rowScoreView.scores[i].label.text = scores.count > i ? scores[i] : " "

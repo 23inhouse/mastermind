@@ -15,6 +15,7 @@
 		B511077723CE0E0100C3BF8E /* UserData+Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077623CE0E0100C3BF8E /* UserData+Game.swift */; };
 		B511077923CF3DD500C3BF8E /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077823CF3DD500C3BF8E /* Box.swift */; };
 		B511077B23CF400A00C3BF8E /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077A23CF400A00C3BF8E /* GameViewModel.swift */; };
+		B511077D23CF56F400C3BF8E /* BoardRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511077C23CF56F400C3BF8E /* BoardRowViewModel.swift */; };
 		B541AEEA23BE1CBA00C67CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */; };
 		B541AEF123BE1CBC00C67CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B541AEF023BE1CBC00C67CAD /* Assets.xcassets */; };
 		B541AEF423BE1CBC00C67CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B541AEF223BE1CBC00C67CAD /* LaunchScreen.storyboard */; };
@@ -77,6 +78,7 @@
 		B511077623CE0E0100C3BF8E /* UserData+Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+Game.swift"; sourceTree = "<group>"; };
 		B511077823CF3DD500C3BF8E /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		B511077A23CF400A00C3BF8E /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		B511077C23CF56F400C3BF8E /* BoardRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRowViewModel.swift; sourceTree = "<group>"; };
 		B541AEE623BE1CBA00C67CAD /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B541AEE923BE1CBA00C67CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B541AEF023BE1CBC00C67CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				B541AF4323BE507E00C67CAD /* BoardRowViewController.swift */,
 				B541AF4023BE4B0E00C67CAD /* BoardRowViewController+ButtonDelegate.swift */,
+				B511077C23CF56F400C3BF8E /* BoardRowViewModel.swift */,
 				B541AF3223BE268400C67CAD /* BoardRowView.swift */,
 				B541AF3623BE27AB00C67CAD /* BoardTileView.swift */,
 				B541AF3423BE273200C67CAD /* RowScoreView.swift */,
@@ -546,6 +549,7 @@
 				B541AF1D23BE1FD100C67CAD /* UIView+Constraints.swift in Sources */,
 				B541AF4A23BE61E000C67CAD /* GameViewController+RowDelegate.swift in Sources */,
 				B541AF4E23BF742D00C67CAD /* ControlsView.swift in Sources */,
+				B511077D23CF56F400C3BF8E /* BoardRowViewModel.swift in Sources */,
 				B541AF4623BE5F5D00C67CAD /* RowDelegate.swift in Sources */,
 				B541AF1E23BE1FD100C67CAD /* UIViewController+Subcontroller.swift in Sources */,
 				B541AF3F23BE483100C67CAD /* ButtonDelegate.swift in Sources */,

@@ -13,37 +13,50 @@ class BoardRowViewController: UIViewController {
   weak var delegate: RowDelegate?
   weak var buttonDelegate: ButtonDelegate?
 
-  var game: GameLogic?
-
   private(set) var boardRowView = BoardRowView()
-  var guesses: [String] { return boardRowView.buttonLabels }
+  private(set) var boardRowVM = BoardRowViewModel()
+
+  var sequence: [String]? { return boardRowVM.sequence.value }
+  var guesses: [String] { return boardRowVM.guesses.value }
 
   var index: Int = 0
   var isActive: Bool = false
+  var isComplete: Bool { return boardRowVM.isComplete }
+  var isSolved: Bool { return boardRowVM.isSolved }
 
-  var isComplete: Bool {
-    for guess in guesses where guess == " " { return false }
-    return true
+  func complete(_ gameVM: GameViewModel, guessCount: Int?) {
+    guard isComplete else { return }
+    guard let guessCount = guessCount else { return }
+
+    if isSolved {
+      gameVM.add(score: guessCount)
+      return
+    }
+
+    if index == 0 {
+      gameVM.add(score: guessCount)
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { UserData.reset() }
+      return
+    }
   }
-  var isSolved: Bool { return guesses == game?.sequence }
 
-  func reset(to new: GameLogic) {
-    game = new
-    set(guesses: GameLogic.empty)
-    boardRowView.set(score: GuessLogic.empty)
+  func set(guesses: [String]) {
+    guard let sequence = sequence else { return }
+    let guess = GuessLogic(correctSequence: sequence, guesses: guesses)
+    boardRowVM.guess = guess
   }
 
-  func setScore(for guesses: [String]? = nil) {
-    guard let game = game else { return }
-    if let guesses = guesses { set(guesses: guesses) }
-
-    let guess = GuessLogic(correctSequence: game.sequence)
-    let score = guess.score(for: self.guesses)
-    boardRowView.set(score: score)
+  func set(sequence: [String]?) {
+    guard let sequence = sequence else { return }
+    let guess = GuessLogic(correctSequence: sequence, guesses: guesses)
+    boardRowVM.guess = guess
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    boardRowVM.guesses.bind { [unowned self] in self.boardRowView.set(guesses: $0) }
+    boardRowVM.score.bind { [unowned self] in self.boardRowView.set(score: $0) }
 
     setupViews()
     setupConstraints()
@@ -52,12 +65,6 @@ class BoardRowViewController: UIViewController {
 }
 
 private extension BoardRowViewController {
-  func set(guesses: [String]) {
-    for (i, guess) in guesses.enumerated() {
-      boardRowView.buttons[i].label.text = guess
-    }
-  }
-
   func setupButtonDelegates() {
     boardRowView.buttons.enumerated().forEach { i, button in
       button.delegate = self

@@ -59,6 +59,6 @@ private extension TileButton {
   }
 
   @objc func touchButton() {
-    delegate?.didTouchButton(self)
+    delegate?.didTouchButton(getLabel(), at: index)
   }
 }

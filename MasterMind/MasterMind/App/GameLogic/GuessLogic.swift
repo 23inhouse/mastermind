@@ -10,12 +10,30 @@ import Foundation
 
 struct GuessLogic {
   let correctSequence: [String]
+  var guesses = [String]() {
+    didSet {
+      guard isComplete else { return }
+      calcScore()
+    }
+  }
+  var score = [String]()
 
-  func score(for guesses: [String]) -> [String] {
+  var isComplete: Bool {
+    for guess in guesses where guess == " " { return false }
+    return true
+  }
+  var isSolved: Bool { return guesses == correctSequence }
+
+  mutating func set(guesses: [String]) {
+    self.guesses = guesses
+  }
+
+  mutating func calcScore() {
+    guard isComplete else { return }
     var currentSequence = correctSequence
 
     var score = [String]()
-    var guesses = guesses
+    var guesses = self.guesses
 
     for (i, guess) in guesses.enumerated() where guess == currentSequence[i] {
       score.append(GuessLogic.correct)
@@ -33,7 +51,13 @@ struct GuessLogic {
       }
     }
 
-    return score
+    self.score = score
+  }
+
+  init(correctSequence: [String], guesses: [String] = GameLogic.empty) {
+    self.correctSequence = correctSequence
+    self.guesses = guesses
+    calcScore()
   }
 }
 
