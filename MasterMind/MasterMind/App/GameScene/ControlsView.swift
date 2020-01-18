@@ -72,7 +72,7 @@ private extension ControlsView {
       buttons.append(boardTileView.button)
     }
 
-    buttons[0].setLabel("🌊")
+    buttons[0].setLabel("💩")
     buttons[4].setLabel("🌈")
   }
 }

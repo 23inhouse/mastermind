@@ -44,9 +44,9 @@ class GameViewController: UIViewController {
   }
 
   func perform(action value: String) {
-    guard ["🌊", "🌈"].contains(value) else { return }
+    guard ["💩", "🌈"].contains(value) else { return }
 
-    if value == "🌊" {
+    if value == "💩" {
       GameViewController.fullReset(self)
     }
     if value == "🌈" && !isComplete { return }
