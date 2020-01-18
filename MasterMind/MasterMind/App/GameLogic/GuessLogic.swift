@@ -16,9 +16,10 @@ struct GuessLogic {
       calcScore()
     }
   }
-  var score = [String]()
+  var score: [String] = GuessLogic.empty
 
   var isComplete: Bool {
+    guard guesses.count == 4 else { return false }
     for guess in guesses where guess == " " { return false }
     return true
   }
@@ -28,6 +29,14 @@ struct GuessLogic {
     self.guesses = guesses
   }
 
+  init(correctSequence: [String], guesses: [String] = GameLogic.empty) {
+    self.correctSequence = correctSequence
+    self.guesses = guesses
+    calcScore()
+  }
+}
+
+private extension GuessLogic {
   mutating func calcScore() {
     guard isComplete else { return }
     var currentSequence = correctSequence
@@ -52,12 +61,6 @@ struct GuessLogic {
     }
 
     self.score = score
-  }
-
-  init(correctSequence: [String], guesses: [String] = GameLogic.empty) {
-    self.correctSequence = correctSequence
-    self.guesses = guesses
-    calcScore()
   }
 }
 
