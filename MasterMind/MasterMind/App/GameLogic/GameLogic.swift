@@ -16,13 +16,10 @@ struct GameLogic {
   var playCount: Int = 0
   var score: Int = 0
 
-  var guesses = [GuessLogic]()
-
   private(set) var sequence = GameLogic.newSequence()
 
   mutating func new() {
     sequence = GameLogic.newSequence()
-    guesses = []
   }
 
   mutating func incrementPlay(with guessCount: Int) {
