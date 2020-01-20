@@ -43,6 +43,10 @@ class GameViewController: UIViewController {
     newActiveRow.isActive = true
   }
 
+  func playCount(_ playCount: Int) -> Int {
+    return self.isComplete ? playCount : playCount + 1
+  }
+
   func perform(action value: String) {
     guard ["💩", "🌈"].contains(value) else { return }
 
@@ -55,15 +59,13 @@ class GameViewController: UIViewController {
   }
 
   func reset() {
+    boardRowVCs.forEach { vc in vc.set(guesses: GuessLogic.empty) }
     gameVM.newSequence()
     redraw()
   }
 
   func redraw() {
-    boardRowVCs.forEach { vc in
-      vc.set(sequence: gameVM.game.sequence)
-      vc.set(guesses: GuessLogic.empty)
-    }
+    boardRowVCs.forEach { vc in vc.set(sequence: gameVM.sequence) }
     autofill()
   }
 
@@ -74,7 +76,7 @@ class GameViewController: UIViewController {
 
     gameVM.average.bind { [unowned self] in self.gameView.controlsView.average = $0 }
     gameVM.best.bind { [unowned self] in self.gameView.controlsView.best = $0 }
-    gameVM.playCount.bind { [unowned self] in self.gameView.controlsView.playCount = $0 }
+    gameVM.playCount.bind { [unowned self] in self.gameView.controlsView.playCount = self.playCount($0) }
     gameVM.score.bind { [unowned self] in self.gameView.controlsView.score = $0 }
 
     setupViews()

@@ -27,6 +27,9 @@ class GameViewModel {
   var sequence: [String] { return game.sequence }
 
   func add(score: Int) {
+    let lastScore = GameLogic.scoreDelta(playCount: game.playCount, guessCount: score)
+    UserData.store(.lastScore, lastScore)
+
     game.incrementPlay(with: score)
     UserData.store(game: game)
   }

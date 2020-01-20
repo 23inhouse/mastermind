@@ -21,12 +21,21 @@ class ControlsView: UIView {
   }
   private var bestAvgText: String { return String(format: "Avg\n%0.3f\nBest: %d", average, best) }
 
-  var playCount: Int = 0 {
+  var lastScore: Int = 0 {
     didSet {
-      buttons[1].setLabel(playCountText, numberOfLines: 2)
+      buttons[1].setLabel(playCountText, numberOfLines: 3)
     }
   }
-  private var playCountText: String { return String(format: "Game\n#%d", playCount) }
+
+  var playCount: Int = 0 {
+    didSet {
+      buttons[1].setLabel(playCountText, numberOfLines: 3)
+    }
+  }
+  private var playCountText: String {
+    let lastScore: Int = UserData.retrieve(.lastScore)
+    return String(format: "Game\n#%d\n+ %d", playCount, lastScore)
+  }
 
   var score: Int = 0 {
     didSet {

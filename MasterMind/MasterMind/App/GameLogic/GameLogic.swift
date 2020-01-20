@@ -36,20 +36,7 @@ private extension GameLogic {
   }
 
   func score(for guessCount: Int) -> Int {
-    let scores: [Int: Int] = [
-      1: 160,
-      2: 80,
-      3: 40,
-      4: 20,
-      5: 10,
-      6: 5,
-      7: 1,
-      8: 1,
-      9: 1,
-      10: 0,
-    ]
-
-    return scores[guessCount] ?? 0
+    return GameLogic.scoreDelta(playCount: playCount, guessCount: guessCount)
   }
 
   mutating func update(average value: Int) {
@@ -76,11 +63,30 @@ extension GameLogic {
   static let secondRowGuess = ["❤️", "💛", "💙", "💜"]
   static let options = ["❤️", "🧡", "💛", "💚", "💙", "💜"]
 
+  static let scores: [Int: Int] = [
+    1: 160,
+    2: 80,
+    3: 40,
+    4: 20,
+    5: 10,
+    6: 5,
+    7: 1,
+    8: 1,
+    9: 1,
+    10: 0,
+  ]
+
   static func newSequence() -> [String] {
     return [random(), random(), random(), random()]
   }
 
   static func random() -> String {
     return options.randomElement() ?? "🧡"
+  }
+
+  static func scoreDelta(playCount: Int, guessCount: Int) -> Int {
+    guard let score = scores[guessCount] else { return 0 }
+    let multiplier = playCount + 1
+    return score * multiplier
   }
 }

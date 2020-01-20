@@ -14,6 +14,23 @@ class GameLogicTests: XCTestCase {
     XCTAssertEqual(GameLogic.empty, [" ", " ", " ", " "])
   }
 
+  func testScoreDelta() {
+    let expectations: [(Int, Int, Int)] = [
+      (0, 5, 10),
+      (9, 5, 10),
+      (10, 5, 100),
+      (20, 5, 200),
+      (99, 5, 900),
+      (100, 5, 1000),
+    ]
+
+    for (playCount, guessCount, expectedScore) in expectations {
+      let score = GameLogic.scoreDelta(playCount: playCount, guessCount: guessCount)
+
+      XCTAssertEqual(score, expectedScore)
+    }
+  }
+
   func testNew() {
     var game = GameLogic()
 
