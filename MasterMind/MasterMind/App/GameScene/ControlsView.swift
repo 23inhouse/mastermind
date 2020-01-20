@@ -19,7 +19,7 @@ class ControlsView: UIView {
       buttons[2].setLabel(bestAvgText, numberOfLines: 3)
     }
   }
-  private var bestAvgText: String { return String(format: "Best: %d\nAvg\n%0.3f", best, average) }
+  private var bestAvgText: String { return String(format: "Avg\n%0.3f\nBest: %d", average, best) }
 
   var playCount: Int = 0 {
     didSet {
